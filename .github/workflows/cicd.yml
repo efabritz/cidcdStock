@@ -7,15 +7,15 @@ jobs:
     tests:
         runs-on: ubuntu-20.04
         env:
-            SECRET_KEY: ${{secrets.SECRET_KEY}}
-            DEBUG: "0"
-            ALLOWED_HOSTS:  ${{secrets.ALLOWED_HOSTS}}
-            DB_ENGINE: ${{secrets.DB_ENGINE}}
-            DB_USER: ${{secrets.DB_USER}}
-            DB_PASSWORD: ${{secrets.DB_PASSWORD}}
-            DB_NAME: ${{secrets.DB_NAME}}
-            DB_HOST: ${{secrets.DB_HOST}}
-            DB_PORT: ${{secrets.DB_PORT}}
+          SECRET_KEY: ${{secrets.SECRET_KEY}}
+          DEBUG: "0"
+          ALLOWED_HOSTS:  ${{secrets.ALLOWED_HOSTS}}
+          DB_ENGINE: ${{secrets.DB_ENGINE}}
+          DB_USER: ${{secrets.DB_USER}}
+          DB_PASSWORD: ${{secrets.DB_PASSWORD}}
+          DB_NAME: ${{secrets.DB_NAME}}
+          DB_HOST: ${{secrets.DB_HOST}}
+          DB_PORT: ${{secrets.DB_PORT}}
         services:
             postgres_main:
                 image: postgres:12
@@ -45,15 +45,15 @@ jobs:
             - name: тестирование
               run: python manage.py test
               env:
-                  SECRET_KEY: ${{env.secrets.SECRET_KEY}}
-                  DEBUG: "0"
-                  ALLOWED_HOSTS:  ${{env.secrets.ALLOWED_HOSTS}}
-                  DB_ENGINE: ${{env.secrets.DB_ENGINE}}
-                  DB_USER: ${{env.secrets.DB_USER}}
-                  DB_PASSWORD: ${{env.secrets.DB_PASSWORD}}
-                  DB_NAME: ${{env.secrets.DB_NAME}}
-                  DB_HOST: ${{env.secrets.DB_HOST}}
-                  DB_PORT: ${{env.secrets.DB_PORT}}
+                SECRET_KEY: ${{env.secrets.SECRET_KEY}}
+                DEBUG: "0"
+                ALLOWED_HOSTS:  ${{env.secrets.ALLOWED_HOSTS}}
+                DB_ENGINE: ${{env.secrets.DB_ENGINE}}
+                DB_USER: ${{env.secrets.DB_USER}}
+                DB_PASSWORD: ${{env.secrets.DB_PASSWORD}}
+                DB_NAME: ${{env.secrets.DB_NAME}}
+                DB_HOST: ${{env.secrets.DB_HOST}}
+                DB_PORT: ${{env.secrets.DB_PORT}}
 #            - name: Deploy
 #                        uses: appleboy/ssh-action@master
 #                        with: # SSH_HOST : IP ADRESS, SSH_USER:.. , SSH_PASSWORD:.. в github

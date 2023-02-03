@@ -1,9 +1,7 @@
 name: Тестирование и развертывание проекта 2
-
 on:
   push:
     branches: [cicd] #cicd название ветки
-
 jobs:
     tests:
         runs-on: ubuntu-20.04

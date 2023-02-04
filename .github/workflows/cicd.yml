@@ -17,7 +17,7 @@ jobs:
           DB_PORT: ${{ secrets.DB_PORT }}
         services:
             postgres_main:
-                image: postgres:12
+                image: postgres:latest
                 env:
                   POSTGRES_DB: "stockprod"
                   POSTGRES_USER: "ekaterina"

@@ -20,6 +20,8 @@ jobs:
         services:
             postgres:
                 image: postgres:12
+                volumes:
+                  - ./${{env.DB_NAME}}/init:/docker-entrypoint-initdb.d
                 env:
                   POSTGRES_DB: ${{ env.DB_NAME }}
                   POSTGRES_USER: ${{ env.DB_USER }}
